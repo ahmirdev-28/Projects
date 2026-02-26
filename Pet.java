@@ -1,43 +1,75 @@
-
 /**
  * Ahmir Devezin
- *
- * @
- * @2/7/26
+ * 2/7/26
  */
-public class Pet
-{
-    //private string name
+
+public class Pet {
+
+    //  data fields
     private String name;
-    
-    public Pet(){
+    private String type;
+    private int age;
+
+    // Default constructor
+    public Pet() {
+        setType("Animal");
         setName("Pet Name");
+        setAge(1);
     }
-    // adding setters and getters
-    public void setName(String newName){
+
+    // Custom constructor
+    public Pet(String type, String name, int age) {
+        setType(type);
+        setName(name);
+        setAge(age);
+    }
+
+    // Setters
+    public void setName(String newName) {
         name = newName;
     }
-    
-    public String getName(){
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Getters
+    public String getName() {
         return name;
     }
-    // string output created
-    public String toString(){
+
+    public String getType() {
+        return type;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Custom speak method
+    public String speak() {
+        if (type.equalsIgnoreCase("dog")) {
+            return "Woof";
+        }
+        else if (type.equalsIgnoreCase("cat")) {
+            return "Meow";
+        }
+        else {
+            return "Yowl";
+        }
+    }
+
+    // toString method
+    public String toString() {
         String output = "Pet information:\n";
-        output += "Name: " + this.getName() + "\n";
+        output += "Type: " + type + "\n";
+        output += "Name: " + name + "\n";
+        output += "Sound: " + speak() + "\n";
+        output += "Age:  " + age + "\n";
         return output;
     }
-    // main method
-    public static void main (String[] args){
-        
-        Pet p1 = new Pet();
-        System.out.print(p1.toString());
-
-        
-        Pet p2 = new Pet();
-        p2.setName("Rufus");
-        System.out.print(p2.toString());
-    
-    }
-
 }
