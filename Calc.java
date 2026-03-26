@@ -1,28 +1,24 @@
 public class Calc
 {
-    // private data fields
     private double num1;
     private double num2;
 
-    // constructor
     public Calc()
     {
         num1 = 0;
         num2 = 0;
     }
 
-    // set methods
-    public void setNum1(double num1)
+    public void setNum1(double n)
     {
-        this.num1 = num1;
+        num1 = n;
     }
 
-    public void setNum2(double num2)
+    public void setNum2(double n)
     {
-        this.num2 = num2;
+        num2 = n;
     }
 
-    // get methods
     public double getNum1()
     {
         return num1;
@@ -33,7 +29,6 @@ public class Calc
         return num2;
     }
 
-    // math methods
     public double add()
     {
         return num1 + num2;
@@ -54,7 +49,6 @@ public class Calc
         return num1 / num2;
     }
 
-    // toString method
     public String toString()
     {
         return "Num1: " + num1 + "\nNum2: " + num2;
